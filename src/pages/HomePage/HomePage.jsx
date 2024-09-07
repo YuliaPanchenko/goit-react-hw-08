@@ -1,5 +1,13 @@
+import LoginForm from "../../components/LoginForm/LoginForm";
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <RegistrationForm />
+      <LoginForm />
+    </>
+  );
 };
 
 export default HomePage;
