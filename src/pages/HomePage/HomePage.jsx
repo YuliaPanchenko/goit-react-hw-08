@@ -1,11 +1,9 @@
-import LoginForm from "../../components/LoginForm/LoginForm";
-import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import css from "../HomePage/HomePage.module.css";
 
 const HomePage = () => {
   return (
     <>
-      <RegistrationForm />
-      <LoginForm />
+      <h1 className={css.title}> Welcome to your contacts manager page</h1>
     </>
   );
 };
