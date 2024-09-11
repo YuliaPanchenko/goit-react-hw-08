@@ -5,6 +5,7 @@ import { selectAuthIsRefreshing } from "./redux/auth/selectors";
 import { apiRefreshUser } from "./redux/auth/operations";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import { Layout } from "./Layout";
+import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 
 // import ContactsPage from "./pages/ContactsPage/ContactsPage";
 // import HomePage from "./pages/HomePage/HomePage";
@@ -23,7 +24,7 @@ function App() {
   const isRefreshing = useSelector(selectAuthIsRefreshing);
 
   useEffect(() => {
-    dispatch(apiRefreshUser);
+    dispatch(apiRefreshUser());
   }, [dispatch]);
 
   return (
@@ -39,7 +40,10 @@ function App() {
             path="/login"
             element={<RestrictedRoute component={<LoginPage />} />}
           />
-          <Route path="/contacts" element={<ContactsPage />} />
+          <Route
+            path="/contacts"
+            element={<PrivateRoute component={<ContactsPage />} />}
+          />
         </Routes>
       </Layout>
     </>

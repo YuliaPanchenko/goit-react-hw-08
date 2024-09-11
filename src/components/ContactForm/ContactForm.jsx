@@ -40,7 +40,7 @@ const ContactForm = () => {
 
   return (
     <div className={css.formWrap}>
-      <h1>Phonebook</h1>
+      <h1 className={css.formTitle}>Phonebook</h1>
       <Formik
         initialValues={INITIAL_VALUES}
         onSubmit={handleSubmit}
